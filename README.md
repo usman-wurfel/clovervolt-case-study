@@ -6,16 +6,18 @@ A driver opens the phone app, finds a station, starts a charge, watches the sess
 
 This repository is the case study. It does not contain the application source.
 
-The phone screens are from the CloverVolt design file. The console screens are from the operations console. Names, email addresses, and phone numbers in those console tables are placeholders.
+The phone screens are from the CloverVolt design file. The console screens are from the operations console. Names, email addresses, and phone numbers on these screens are sample values from the design, not live customer records.
 
 ## Customer app
 
-The home screen is the front door. The driver sees a wallet balance, the nearest station, and the services on the network.
+The phone app is the driver side of the network: sign in, find a station, book a connector, start a charge, watch it, and pay. The same app also carries car wash, oil, tyres, and the wallet.
 
 <p>
-  <img src="screens/home.png" alt="CloverVolt home" width="260" />
-  <img src="screens/login.png" alt="Email and password login" width="220" />
-  <img src="screens/otp.png" alt="Mobile one-time code" width="220" />
+  <img src="screens/app/splash.png" alt="CloverVolt splash" width="170" />
+  <img src="screens/app/onboarding.png" alt="Onboarding" width="170" />
+  <img src="screens/home.png" alt="CloverVolt home" width="170" />
+  <img src="screens/login.png" alt="Email and password login" width="170" />
+  <img src="screens/otp.png" alt="Mobile one-time code" width="170" />
 </p>
 
 ### Account
@@ -27,17 +29,38 @@ Sign-in matches how people in this market actually log in.
 - Google
 - Apple
 - Create account
-- A second step for a one-time code when the account asks for it
+- A second step when the account asks for it, by SMS or an authenticator
 
-The driver also has a profile, saved vehicles, and a support entry from the home screen.
+The driver also has a profile, a language choice, saved vehicles, and a support entry from the home screen.
+
+<p>
+  <img src="screens/app/create-account.png" alt="Create account" width="170" />
+  <img src="screens/app/two-factor.png" alt="Secure account" width="170" />
+  <img src="screens/app/profile.png" alt="Profile" width="170" />
+  <img src="screens/app/vehicles.png" alt="My vehicles" width="170" />
+  <img src="screens/app/add-vehicle.png" alt="Add a vehicle" width="170" />
+  <img src="screens/app/settings.png" alt="Settings" width="170" />
+  <img src="screens/app/language.png" alt="Language" width="170" />
+</p>
 
 ### Home
 
-Home shows the wallet, promotional banners, and tiles for EV charging, car wash, oil change, tyres, and LPG. Some tiles in this frame are marked Coming Soon. The nearest station shows the name and the distance. Bottom navigation is Home, Bookings, Wallet, and Profile.
+Home shows the wallet, promotional banners, and tiles for EV charging, car wash, oil change, tyres, and LPG. On this frame, car wash, oil, and tyres are marked Coming Soon, while the dedicated screens for those services already exist further in the design. The nearest station shows the name and the distance. Bottom navigation is Home, Bookings, Wallet, and Profile.
 
 ### Stations and booking
 
-The driver can look at stations on a map, filter by connector and power, and open a station. A booking is a date and a time on a specific connector. The booking has an 8-digit code the driver can use at the charger.
+The driver looks at stations on a map, filters by connector and power, and opens a station. A booking is a date and a time on a specific connector. The booking has an 8-digit code the driver can use at the charger. On arrival the driver confirms they are at the bay.
+
+<p>
+  <img src="screens/app/stations-map.png" alt="Nearest stations on the map" width="170" />
+  <img src="screens/app/filters.png" alt="Connector and power filters" width="170" />
+  <img src="screens/app/station-detail.png" alt="Station detail" width="170" />
+  <img src="screens/app/book-connector.png" alt="Available connectors" width="170" />
+  <img src="screens/app/slot.png" alt="Pick a date and time" width="170" />
+  <img src="screens/app/booking-confirmed.png" alt="Booking confirmed" width="170" />
+  <img src="screens/app/bookings.png" alt="My bookings" width="170" />
+  <img src="screens/app/arrived.png" alt="Confirm arrival" width="170" />
+</p>
 
 ### Starting a charge
 
@@ -51,15 +74,40 @@ A charge can be started with:
 
 If the charger is offline, the start is refused. The app does not pretend a session is running.
 
+<p>
+  <img src="screens/app/start-charging.png" alt="Start charging by charger ID, booking ID, or QR" width="170" />
+  <img src="screens/app/select-charger.png" alt="Select a charger" width="170" />
+  <img src="screens/app/charger-booking.png" alt="Charge point booking" width="170" />
+</p>
+
 ### Live session
 
 While the car is charging, the phone keeps one connection open to the API. Energy, power, elapsed time, and the running cost arrive on that connection when the charger reports a new meter reading. The app does not call the API every few seconds to ask for the same numbers.
 
-The running bill uses the same figures the final bill uses: energy cost, time cost, session fee, idle fee, discount, and total. Stopping the session closes it and opens the bill. The driver can download a PDF invoice.
+The running bill uses the same figures the final bill uses: energy cost, time cost, session fee, idle fee, discount, and total. Stopping the session closes it and opens the bill. The driver can rate the session and download a PDF invoice. Past bookings and sessions stay in history.
+
+<p>
+  <img src="screens/app/live-charging.png" alt="Live charging session" width="170" />
+  <img src="screens/app/charging-complete.png" alt="Charging complete" width="170" />
+  <img src="screens/app/invoice.png" alt="Invoice with PDF download" width="170" />
+  <img src="screens/app/usage.png" alt="Usage summary" width="170" />
+  <img src="screens/app/booking-history.png" alt="Booking history" width="170" />
+  <img src="screens/app/session-history.png" alt="Session history" width="170" />
+</p>
 
 ### Money
 
-The driver can pay from the wallet, JazzCash, Easypaisa, or a card. Coupons reduce the session total. A finished session stays in bookings with its receipt.
+The driver can pay from the wallet, JazzCash, Easypaisa, or a card. A top-up picks an amount and a method. A finished session shows the bill, and the driver can also pay cash or card at the station. Coupons reduce the session total.
+
+<p>
+  <img src="screens/app/wallet.png" alt="Wallet and recent transactions" width="170" />
+  <img src="screens/app/top-up.png" alt="Top up the wallet" width="170" />
+  <img src="screens/app/payment.png" alt="JazzCash, Easypaisa, and card" width="170" />
+  <img src="screens/app/add-card.png" alt="Add a card" width="170" />
+  <img src="screens/app/session-bill.png" alt="Session bill" width="170" />
+  <img src="screens/app/payment-success.png" alt="Payment successful" width="170" />
+  <img src="screens/app/pay-at-station.png" alt="Pay cash or card at the station" width="170" />
+</p>
 
 ### Vehicles
 
@@ -69,19 +117,35 @@ The driver saves the cars they charge. The catalog behind that is brands, models
 
 These are jobs that come to the driver, not a charger session.
 
-- Oil change: brand, grade, a health check, a price, a pin, and a time slot
+- Oil change: brand, grade, a price, and labour
 - Tyre fitting: brand, size, wheel balancing, a pin, and a slot
 - Rescue and emergency: fuel dispatch, jump-start, an emergency tyre, or a tow
 
-The driver pays these from the wallet. The operator sees the order, assigns the work, and moves the status.
+The driver pays these from the wallet. The operator sees the order, assigns the work, and moves the status. Booking history lists charging, wash, oil, tyres, and rescue in one place.
 
-### Car wash and LPG
+<p>
+  <img src="screens/app/services.png" alt="Services after a charge" width="170" />
+  <img src="screens/app/oil-change.png" alt="Oil change" width="170" />
+</p>
 
-Both are part of the product design.
+### Car wash
 
-Car wash covers packages at the station, a time slot, and pick-up and drop-off: the car is collected, washed, and returned. LPG covers cylinder pickup at an outlet and home delivery inside a coverage area, with a slot and a status the driver can follow.
+Car wash is in the design as its own flow: a list of wash centres, filters, packages, a slot, arrival, a live wash session, and a rating when the car is done.
 
-In the operations console those two modules are still marked as a later milestone. Oil, tyres, and rescue are already in the console.
+<p>
+  <img src="screens/app/wash-centres.png" alt="Wash centres" width="170" />
+  <img src="screens/app/wash-filters.png" alt="Wash filters" width="170" />
+  <img src="screens/app/wash-station.png" alt="Wash packages" width="170" />
+  <img src="screens/app/wash-slot.png" alt="Book a wash slot" width="170" />
+  <img src="screens/app/wash-booked.png" alt="Wash booking confirmed" width="170" />
+  <img src="screens/app/wash-arrived.png" alt="Arrived at the wash centre" width="170" />
+  <img src="screens/app/wash-live.png" alt="Live wash session" width="170" />
+  <img src="screens/app/wash-done.png" alt="Wash complete" width="170" />
+</p>
+
+LPG is on the home screen as its own tile. Cylinder pickup and home delivery are part of the product design: an outlet, a coverage area, a slot, and a status the driver can follow.
+
+In the operations console, car wash and LPG are still marked as a later milestone. Oil, tyres, and rescue are already in the console.
 
 ## Operations console
 
