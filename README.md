@@ -12,6 +12,13 @@ The phone screens are from the CloverVolt design file. The console screens are f
 
 The phone app is the driver side of the network: sign in, find a station, book a connector, start a charge, watch it, and pay. The same app also carries car wash, oil, tyres, and the wallet.
 
+### End-to-end charging flow
+
+<p>
+  <img src="screens/app/montage-app-flow.png" alt="CloverVolt app charging flow montage" width="900" />
+</p>
+
+
 <p>
   <img src="screens/app/splash.png" alt="CloverVolt splash" width="170" />
   <img src="screens/app/onboarding.png" alt="Onboarding" width="170" />
